@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase de Precálculo: Razones Trigonométricas y Triángulos Notables</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #2980b9;
+            --accent: #e67e22;
+            --bg: #f4f7f6;
+            --text: #333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin-top: 0.5rem;
+            color: #ecf0f1;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Estilos para tablas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Mnemonica Box */
+        .mnemonica-box {
+            background-color: #e8f4f8;
+            border-left: 5px solid var(--secondary);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        /* Interactivo */
+        .interactive-zone {
+            background: #fff8e7;
+            border: 2px dashed var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.35s;
+        }
+
+        button:hover {
+            background-color: #1a5276;
+        }
+
+        /* Canvas de Geogebra/Dibujo simple */
+        canvas {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-width: 100%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary);
+            color: white;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase de Precálculo: Razones Trigonométricas y Triángulos Notables</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #2980b9;
+            --accent: #e67e22;
+            --bg: #f4f7f6;
+            --text: #333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin-top: 0.5rem;
+            color: #ecf0f1;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        /* Estilos ajustados para Imágenes */
+        .img-responsive {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            display: block;
+            margin: 1rem auto;
+        }
+
+        .img-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Estilos para tablas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Mnemonica Box */
+        .mnemonica-box {
+            background-color: #e8f4f8;
+            border-left: 5px solid var(--secondary);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        /* Interactivo */
+        .interactive-zone {
+            background: #fff8e7;
+            border: 2px dashed var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.35s;
+        }
+
+        button:hover {
+            background-color: #1a5276;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary);
+            color: white;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Precálculo: Razones Trigonométricas y Triángulos Notables</h1>
+        <p>Una experiencia de aprendizaje desde las Múltiples Inteligencias</p>
+    </header>
+
+    <div class="container">
+
+        <!-- MOMENTO 1: INTRODUCCIÓN Y NEMOTECNIA -->
+        <section>
+            <span class="tag">Inteligencia Lingüística & Auditiva</span>
+            <h2>1. ¿Cómo recordamos las Razones Trigonométricas?</h2>
+            <p>Para construir la base de la trigonometría, necesitamos relacionar los lados de un triángulo rectángulo (Cateto Opuesto, Cateto Adyacente e Hipotenusa) con respecto a un ángulo θ.</p>
+            
+            <div class="mnemonica-box">
+                <strong>¡El Canto Trigonométrico! Memoriza la palabra mágica:</strong>
+                <h3 style="color: var(--accent); text-align: center; font-size: 2rem; margin: 0.5rem 0;">SOH - CAH - TOA</h3>
+                <ul>
+                    <li><strong>SOH:</strong> <strong>S</strong>eno = <strong>O</strong>puesto / <strong>H</strong>ipotenusa</li>
+                    <li><strong>CAH:</strong> <strong>C</strong>oseno = <strong>A</strong>dyacente / <strong>H</strong>ipotenusa</li>
+                    <li><strong>TOA:</strong> <strong>T</strong>angente = <strong>O</strong>puesto / <strong>A</strong>dyacente</li>
+                </ul>
+            </div>
+            <p><em>Rincón auditivo:</em> Intenta repetir "SOH-CAH-TOA" con un ritmo o aplauso (3 aplausos rápidos por cada sílaba) para grabarlo en tu memoria musical.</p>
+        </section>
+
+        <!-- MOMENTO 2: GEOMETRÍA Y VISUALIZACIÓN (CON IMÁGENES INTEGRADAS) -->
+        <section>
+            <span class="tag">Inteligencia Visual-Espacial & Lógico-Matemática</span>
+            <h2>2. Triángulos Notables: La Geometría Sagrada</h2>
+            <p>Los triángulos notables surgen de figuras geométricas perfectas: el <strong>cuadrado</strong> (dividido por su diagonal) y el <strong>triángulo equilátero</strong> (dividido por su altura).</p>
+
+            <div class="grid-2">
+                <div>
+                    <h3>Triángulo 45° - 45° (Isósceles)</h3>
+                    <p>Nace de un cuadrado de lado 1. Por Pitágoras, la diagonal (hipotenusa) mide √2.</p>
+                    
+                    <svg class="img-responsive" viewBox="0 0 400 300" role="img" aria-labelledby="triangle45-title">
+                        <title id="triangle45-title">Triángulo rectángulo de 45, 45 y 90 grados</title>
+                        <path d="M70 250 L350 250 L350 30 Z" fill="#e8f4f8" stroke="#2980b9" stroke-width="4" stroke-linejoin="round"></path>
+                        <path d="M330 250 L330 230 L350 230" fill="none" stroke="#e67e22" stroke-width="3"></path>
+                        <text x="91" y="224" fill="#2c3e50" font-size="20">45°</text>
+                        <text x="302" y="61" fill="#2c3e50" font-size="20">45°</text>
+                        <text x="304" y="278" fill="#2c3e50" font-size="20">90°</text>
+                        <text x="197" y="278" fill="#2c3e50" font-size="18">1</text>
+                        <text x="358" y="147" fill="#2c3e50" font-size="18">1</text>
+                        <text x="194" y="128" fill="#2c3e50" font-size="18" transform="rotate(-38 194 128)">√2</text>
+                    </svg>
+                    <p class="img-caption">Figura 1: Triángulo rectángulo isósceles (45° - 45°)</p>
+                </div>
+
+                <div>
+                    <h3>Triángulo 30° - 60° (Escaleno)</h3>
+                    <p>Nace de la mitad de un triángulo equilátero de lado 2. Su altura mide √3.</p>
+                    
+                    <svg class="img-responsive" viewBox="0 0 400 300" role="img" aria-labelledby="triangle3060-title">
+                        <title id="triangle3060-title">Triángulo rectángulo de 30, 60 y 90 grados</title>
+                        <path d="M70 250 L350 250 L350 88.3 Z" fill="#fff3e8" stroke="#2980b9" stroke-width="4" stroke-linejoin="round"></path>
+                        <path d="M330 250 L330 230 L350 230" fill="none" stroke="#e67e22" stroke-width="3"></path>
+                        <text x="91" y="224" fill="#2c3e50" font-size="20">30°</text>
+                        <text x="302" y="120" fill="#2c3e50" font-size="20">60°</text>
+                        <text x="304" y="278" fill="#2c3e50" font-size="20">90°</text>
+                        <text x="197" y="278" fill="#2c3e50" font-size="18">√3</text>
+                        <text x="358" y="174" fill="#2c3e50" font-size="18">1</text>
+                        <text x="194" y="155" fill="#2c3e50" font-size="18" transform="rotate(-30 194 155)">2</text>
+                    </svg>
+                    <p class="img-caption">Figura 2: Triángulo rectángulo escaleno (30° - 60°)</p>
+                </div>
+            </div>
+
+            <h3>Tabla Resumen de Razones Notables</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ángulo (θ)</th>
+                        <th>Sen(θ)</th>
+                        <th>Cos(θ)</th>
+                        <th>Tan(θ)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>30° (π/6)</strong></td>
+                        <td>1/2</td>
+                        <td>√3 / 2</td>
+                        <td>√3 / 3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>45° (π/4)</strong></td>
+                        <td>√2 / 2</td>
+                        <td>√2 / 2</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td><strong>60° (π/3)</strong></td>
+                        <td>√3 / 2</td>
+                        <td>1/2</td>
+                        <td>√3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- MOMENTO 3: EXPERIMENTACIÓN KINESTÉSICA (IMAGEN DE LA MANO INTEGRADA) -->
+        <section>
+            <span class="tag">Inteligencia Corporal-Kinestésica</span>
+            <h2>3. La Regla de la Mano (Truco Físico)</h2>
+            <p>¡Usa tu propia mano izquierda para calcular senos y cosenos sin memorizar las tablas!</p>
+            
+            <div class="grid-2">
+                <div>
+                    <ol>
+                        <li>Abre tu mano izquierda frente a ti.</li>
+                        <li>Asigna un ángulo a cada dedo desde el meñique (0°) hasta el pulgar (90°):
+                            <ul>
+                                <li>Meñique = 0°</li>
+                                <li>Anular = 30°</li>
+                                <li>Medio = 45°</li>
+                                <li>Índice = 60°</li>
+                                <li>Pulgar = 90°</li>
+                            </ul>
+                        </li>
+                        <li><strong>Fórmula mágica:</strong> <br>
+                        </li>
+                        <li>Para el <strong>Seno</strong>, dobla el dedo del ángulo deseado y cuenta los dedos que quedan <em>debajo</em>.</li>
+                    </ol>
+                </div>
+
+                <div>
+                    <!-- REEMPLAZA LA URL 'src' CON TU IMAGEN DE LA REGLA DE LA MANO -->
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRA--a3Tj6idbkf2uoKUcWicE9Tdsi0ekuFdKTZEAtOoZINTSTyQWyZo8&s=10" alt="Truco de la mano para razones trigonométricas" class="img-responsive">
+                    <p class="img-caption">Figura 3: Asignación de ángulos en la mano izquierda</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MOMENTO 4: APLICACIÓN PRÁCTICA Y MUNDO REAL -->
+        <section>
+            <span class="tag">Inteligencia Naturalista & Interpersonal</span>
+            <h2>4. Reto del Mundo Real: Midiendo la Altura de un Árbol</h2>
+            <p>Un botánico necesita saber la altura de un árbol muy alto sin trepar a él. Se coloca a 10 metros de la base del árbol y, usando un clinómetro, mide un ángulo de elevación hacia la copa del árbol exactamente de **60°**.</p>
+            
+            <svg class="img-responsive" viewBox="0 0 500 280" role="img" aria-labelledby="tree-problem-title">
+                <title id="tree-problem-title">Árbol de altura h, a 10 metros del observador que mide un ángulo de elevación de 60 grados</title>
+                <rect width="500" height="280" fill="#f4f7f6"></rect>
+                <path d="M35 230 H465" stroke="#647b55" stroke-width="4"></path>
+                <path d="M115 230 L115 57" stroke="#795548" stroke-width="14" stroke-linecap="round"></path>
+                <path d="M115 28 L61 102 H87 L48 151 H142 L104 102 H132 Z" fill="#4f8a55" stroke="#356b3b" stroke-width="3" stroke-linejoin="round"></path>
+                <circle cx="215" cy="172" r="10" fill="#e67e22"></circle>
+                <path d="M215 184 V224 M215 195 L197 211 M215 195 L230 208 M215 224 L200 239 M215 224 L230 239" fill="none" stroke="#2c3e50" stroke-width="6" stroke-linecap="round"></path>
+                <path d="M215 230 L115 57" stroke="#e67e22" stroke-width="3" stroke-dasharray="8 6"></path>
+                <path d="M175 230 A40 40 0 0 1 195 195.4" fill="none" stroke="#2980b9" stroke-width="3"></path>
+                <text x="163" y="209" fill="#2980b9" font-size="18" font-weight="bold">60°</text>
+                <path d="M115 246 H215 M115 240 V252 M215 240 V252" fill="none" stroke="#2c3e50" stroke-width="2"></path>
+                <text x="155" y="269" fill="#2c3e50" font-size="18">10 m</text>
+                <path d="M88 57 H78 V230 H88" fill="none" stroke="#2980b9" stroke-width="2"></path>
+                <text x="54" y="151" fill="#2980b9" font-size="20" font-style="italic">h</text>
+                <text x="237" y="192" fill="#2c3e50" font-size="14">observador</text>
+            </svg>
+
+            <div class="interactive-zone">
+                <h3>¿Cuál es la altura exacta del árbol?</h3>
+                <p>Aplica las razones trigonométricas aprendidas hoy.</p>
+                <button onclick="revelarSolucion()">Ver Solución Guiada</button>
+                
+                <div id="solucion" style="display:none; margin-top: 1.5rem; text-align:left; background:white; padding:1rem; border-radius:5px;">
+                    <p><strong>Paso 1: Identificar datos</strong></p>
+                    <ul>
+                        <li>Cateto adyacente (distancia al árbol) = 10 m</li>
+                        <li>Ángulo θ = 60°</li>
+                        <li>Cateto opuesto (altura h) = ?</li>
+                    </ul>
+                    <p><strong>Paso 2: Elegir la razón adecuada (SOH-CAH-TOA)</strong></p>
+                    <p>Relacionamos el cateto opuesto y el adyacente con la <strong>tangente</strong>: tan(60°) = cateto opuesto / cateto adyacente</p>
+                    <p><strong>Paso 3: Sustituir con valores notables</strong></p>
+                    <p>Sabemos que tan(60°) = √3.</p>
+                    <p>√3 = h / 10, entonces h = 10√3 metros.</p>
+                    <p><em>(Aproximadamente 17.32 metros)</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MOMENTO 5: AUTOVALORACIÓN (INTRAPERSONAL) -->
+        <section>
+            <span class="tag">Inteligencia Intrapersonal</span>
+            <h2>5. Reflexión y Autoevaluación</h2>
+            <p>Piensa en tu proceso de aprendizaje de hoy y responde mentalmente o en tu libreta:</p>
+            <ul>
+                <li>¿Qué método te ayudó más a entender el tema? ¿El truco de la mano, la visualización de los triángulos o la nemotecnia del canto?</li>
+                <li>¿En qué tipo de situaciones de tu carrera o vida cotidiana crees que podrías aplicar triángulos rectángulos?</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Material Pedagógico - Curso de Precálculo | Enfoque de Aprendizajes Múltiples</p>
+    </footer>
+
+    <script>
+        function revelarSolucion() {
+            var sol = document.getElementById("solucion");
+            if (sol.style.display === "none") {
+                sol.style.display = "block";
+            } else {
+                sol.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
