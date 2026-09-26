@@ -1,13 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Plataforma Interactiva de Matemática</title>
+    
+    <!-- Política de Seguridad de Contenido (CSP) para evitar errores en Live Server -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self'; 
+        style-src 'self' 'unsafe-inline' https://www.gstatic.com; 
+        script-src 'self' 'unsafe-inline'; 
+        connect-src 'self' http://localhost:* ws://localhost:*; 
+        img-src 'self' data:;
+    ">
+
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-sucesiones: #3498db;
+            --accent-trig: #e67e22;
+            --background: #f4f7f6;
+            --card-bg: #ffffff;
+            --text: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        main {
+            flex: 1;
+            max-width: 900px;
+            width: 90%;
+            margin: 40px auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-top: 6px solid var(--primary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card.sucesiones {
+            border-top-color: var(--accent-sucesiones);
+        }
+
+        .card.trigonometria {
+            border-top-color: var(--accent-trig);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn-sucesiones {
+            background-color: var(--accent-sucesiones);
+        }
+
+        .btn-trigonometria {
+            background-color: var(--accent-trig);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #e2e8f0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <a href="sucesiones_aritmeticas_y_geometricas.html">Ir a Sucesiones</a>
-    <br>
-    <a href="razones_trigonometricas.html">Ir a Razones Trigonométricas</a>
+
+    <header>
+        <h1>Portal Aulas Interactivas de Matemática</h1>
+        <p>Selecciona la unidad de estudio para ingresar a los recursos interactivos</p>
+    </header>
+
+    <main>
+        <div class="grid-container">
+            
+            <!-- Tarjeta 1: Sucesiones -->
+            <div class="card sucesiones">
+                <div>
+                    <h2>Sucesiones Aritméticas y Geométricas</h2>
+                    <p>Explora patrones numéricos, deduce términos generales, calcula sumas finitas y experimenta con la calculadora interactiva.</p>
+                </div>
+                <a href="sucesiones_aritmeticas_y_geometricas.html" class="btn btn-sucesiones">Ir a Sucesiones &rarr;</a>
+            </div>
+
+            <!-- Tarjeta 2: Trigonometría -->
+            <div class="card trigonometria">
+                <div>
+                    <h2>Razones Trigonométricas</h2>
+                    <p>Estudia relaciones entre los lados y ángulos de triángulos rectángulos, propiedades de seno, coseno, tangente y resolución de problemas.</p>
+                </div>
+                <a href="razones_trigonometricas.html" class="btn btn-trigonometria">Ir a Trigonometría &rarr;</a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Recurso Didáctico de Matemática</p>
+    </footer>
+
 </body>
 </html>
