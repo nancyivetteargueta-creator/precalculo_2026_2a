@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guión de Repaso: Ángulos de Elevación y Depresión</title>
+    
+    <!-- Política de Seguridad de Contenido (CSP) para evitar errores locales -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self'; 
+        style-src 'self' 'unsafe-inline' https://www.gstatic.com; 
+        script-src 'self' 'unsafe-inline'; 
+        connect-src 'self' http://localhost:* ws://localhost:*; 
+        img-src 'self' data:;
+    ">
+
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0284c7;
+            --accent: #f59e0b;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .docente-badge {
+            display: inline-block;
+            background-color: var(--secondary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header {
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        .card-header h2 {
+            margin: 0;
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .concept-box {
+            background-color: #f0f9ff;
+            border-left: 5px solid var(--secondary);
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        .svg-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-top: 10px;
+        }
+
+        .formula-box {
+            background-color: #fffbe3;
+            border: 1px dashed var(--accent);
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .ejemplo {
+            background-color: #fafafa;
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .paso-titulo {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .autoevaluacion-item {
+            margin-bottom: 12px;
+        }
+
+        .ejercicio-card {
+            border-left: 4px solid var(--accent);
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .solucion-toggle {
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .solucion-toggle summary {
+            color: var(--secondary);
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .solucion-toggle ol {
+            margin-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Encabezado Principal -->
+    <header>
+        <h1>Guión de Repaso: Razones Trigonométricas</h1>
+        <p>Tema: Ángulos de Elevación y Ángulos de Depresión</p>
+        <div class="docente-badge">Docente: Nancy Argueta</div>
+    </header>
+
+    <!-- Propósito pedagógico -->
+    <section class="card">
+        <div class="card-header">
+            <h2>1. Propósito de la Actividad y Diversidad de Aprendizajes</h2>
+        </div>
+        <p><strong>Objetivo:</strong> Consolidar la capacidad de identificar, graficar y calcular distancias e inclinaciones en situaciones reales mediante el uso de razones trigonométricas en triángulos rectángulos.</p>
+        <p><strong>Atención a estilos de aprendizaje:</strong></p>
+        <ul>
+            <li><strong>Aprendizaje Visual:</strong> Gráficos esquemáticos integrados que muestran la relación entre la línea horizontal de referencia y la línea de visión.</li>
+            <li><strong>Aprendizaje Auditivo / Dialógico:</strong> Discusión guiada para argumentar por qué el ángulo de depresión es equivalente al ángulo de elevación opuesto.</li>
+            <li><strong>Aprendizaje Kinestésico / Práctico:</strong> Resolución de problemas del entorno real mediante el modelado paso a paso.</li>
+        </ul>
+    </section>
+
+    <!-- Marco Teórico con Esquemas Visuales Integrados -->
+    <section class="card">
+        <div class="card-header">
+            <h2>2. Marco Teórico con Representaciones Gráficas</h2>
+        </div>
+        
+        <div class="grid-2">
+            <!-- Ángulo de Elevación -->
+            <div class="concept-box">
+                <h3>Ángulo de Elevación</h3>
+                <p>Ocurre cuando el objeto observado se encuentra <strong>por encima</strong> del nivel de la vista del observador.</p>
+                
+                <div class="svg-container">
+                    <svg width="220" height="140" viewBox="0 0 220 140">
+                        <!-- Suelo u Horizontal -->
+                        <line x1="20" y1="110" x2="200" y2="110" stroke="#0284c7" stroke-width="2" stroke-dasharray="4"/>
+                        <text x="110" y="125" font-size="11" fill="#0284c7" text-anchor="middle">Línea Horizontal</text>
+                        
+                        <!-- Visión -->
+                        <line x1="20" y1="110" x2="180" y2="20" stroke="#1e3a8a" stroke-width="2"/>
+                        <text x="90" y="55" font-size="11" fill="#1e3a8a" transform="rotate(-28, 90, 55)">Línea de visión</text>
+                        
+                        <!-- Objeto -->
+                        <circle cx="180" cy="20" r="6" fill="#f59e0b"/>
+                        <text x="190" y="25" font-size="10" fill="#1e293b">Objeto</text>
+                        
+                        <!-- Observador -->
+                        <circle cx="20" cy="110" r="5" fill="#1e3a8a"/>
+                        
+                        <!-- Arco de Ángulo -->
+                        <path d="M 50 110 A 30 30 0 0 0 45 98" fill="none" stroke="#f59e0b" stroke-width="2"/>
+                        <text x="58" y="104" font-size="12" fill="#f59e0b" font-weight="bold">θ</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Ángulo de Depresión -->
+            <div class="concept-box">
+                <h3>Ángulo de Depresión</h3>
+                <p>Ocurre cuando el objeto observado se encuentra <strong>por debajo</strong> del nivel de la vista del observador.</p>
+                
+                <div class="svg-container">
+                    <svg width="220" height="140" viewBox="0 0 220 140">
+                        <!-- Horizontal Superior -->
+                        <line x1="20" y1="30" x2="200" y2="30" stroke="#0284c7" stroke-width="2" stroke-dasharray="4"/>
+                        <text x="110" y="20" font-size="11" fill="#0284c7" text-anchor="middle">Línea Horizontal</text>
+                        
+                        <!-- Visión -->
+                        <line x1="20" y1="30" x2="180" y2="120" stroke="#1e3a8a" stroke-width="2"/>
+                        <text x="90" y="85" font-size="11" fill="#1e3a8a" transform="rotate(28, 90, 85)">Línea de visión</text>
+                        
+                        <!-- Observador arriba -->
+                        <circle cx="20" cy="30" r="5" fill="#1e3a8a"/>
+                        
+                        <!-- Objeto abajo -->
+                        <circle cx="180" cy="120" r="6" fill="#f59e0b"/>
+                        <text x="125" y="130" font-size="10" fill="#1e293b">Objeto abajo</text>
+                        
+                        <!-- Arco de Ángulo -->
+                        <path d="M 50 30 A 30 30 0 0 1 45 42" fill="none" stroke="#f59e0b" stroke-width="2"/>
+                        <text x="58" y="44" font-size="12" fill="#f59e0b" font-weight="bold">α</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-box">
+            Fórmula principal: Tangente(Ángulo) = Cateto Opuesto / Cateto Adyacente
+        </div>
+    </section>
+
+    <!-- Ejemplos Prácticos Resueltos -->
+    <section class="card">
+        <div class="card-header">
+            <h2>3. Ejemplos Resueltos de Comprensión</h2>
+        </div>
+
+        <div class="ejemplo">
+            <span class="paso-titulo">Ejemplo 1 (Elevación):</span>
+            <p>Un estudiante parado a 12 metros de un árbol observa su parte más alta con un ángulo de elevación de 70 grados. Calcula la altura del árbol.</p>
+            <p><strong>Resolución:</strong></p>
+            <ol>
+                <li>Planteamiento: Tangente(70°) = Altura / 12</li>
+                <li>Despeje: Altura = 12 * Tangente(70°)</li>
+                <li>Operación: Altura = 12 * 2.7475 = 32.97 metros</li>
+                <li><strong>Respuesta:</strong> La altura del árbol es aproximadamente 32.97 metros.</li>
+            </ol>
+        </div>
+
+        <div class="ejemplo">
+            <span class="paso-titulo">Ejemplo 2 (Depresión):</span>
+            <p>Desde la cima de un faro de 75 metros de altura se observa un bote en el mar con un ángulo de depresión de 37 grados. ¿A qué distancia de la base del faro está el bote?</p>
+            <p><strong>Resolución:</strong></p>
+            <ol>
+                <li>Por ángulos alternos internos, el ángulo en la base del bote es también de 37 grados.</li>
+                <li>Planteamiento: Tangente(37°) = 75 / Distancia</li>
+                <li>Despeje: Distancia = 75 / Tangente(37°)</li>
+                <li>Operación: Distancia = 75 / 0.7536 = 99.52 metros</li>
+                <li><strong>Respuesta:</strong> El bote está a 99.52 metros del faro.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Autoevaluación -->
+    <section class="card">
+        <div class="card-header">
+            <h2>4. Lista de Autoevaluación</h2>
+        </div>
+        <p>Marca cada logro según tu comprensión del tema:</p>
+        <div class="autoevaluacion-item">
+            <input type="checkbox" id="c1">
+            <label for="c1">Identifico siempre la línea horizontal antes de dibujar el ángulo.</label>
+        </div>
+        <div class="autoevaluacion-item">
+            <input type="checkbox" id="c2">
+            <label for="c2">Diferencio claramente la posición de un ángulo de elevación frente a uno de depresión.</label>
+        </div>
+        <div class="autoevaluacion-item">
+            <input type="checkbox" id="c3">
+            <label for="c3">Sé cómo aplicar la razón Tangente para calcular alturas y distancias desconocidas.</label>
+        </div>
+    </section>
+
+    <!-- Ejercicios Prácticos -->
+    <section class="card">
+        <div class="card-header">
+            <h2>5. Ejercicios Prácticos para Resolver en Cuaderno</h2>
+        </div>
+        <div class="ejercicio-card">
+            <p><strong>Ejercicio 1:</strong> Un guardabosques de 1.6 metros de estatura observa la punta de un árbol desde una distancia de 7 metros, con un ángulo de elevación de 74 grados. ¿Cuál es la altura total del árbol?</p>
+            <details class="solucion-toggle">
+                <summary>Ver solución paso a paso</summary>
+                <ol>
+                    <li>Identificamos los datos: distancia horizontal = 7 m, ángulo = 74° y altura de los ojos = 1.6 m.</li>
+                    <li>La tangente relaciona la altura desde los ojos hasta la punta con la distancia: tan(74°) = altura sobre los ojos / 7.</li>
+                    <li>Despejamos: altura sobre los ojos = 7 × tan(74°).</li>
+                    <li>Calculamos: altura sobre los ojos ≈ 7 × 3.4874 = 24.41 m.</li>
+                    <li>Sumamos la estatura del guardabosques: altura total ≈ 24.41 + 1.6 = <strong>26.01 m</strong>.</li>
+                </ol>
+            </details>
+        </div>
+        <div class="ejercicio-card">
+            <p><strong>Ejercicio 2:</strong> Un dron vuela a una altura de 100 metros y detecta un carro estacionado en la calle con un ángulo de depresión de 54 grados. ¿A qué distancia horizontal se encuentra el carro del punto directamente debajo del dron?</p>
+            <details class="solucion-toggle">
+                <summary>Ver solución paso a paso</summary>
+                <ol>
+                    <li>Identificamos los datos: altura = 100 m y ángulo de depresión = 54°.</li>
+                    <li>El ángulo de elevación desde el carro también mide 54°, porque las horizontales son paralelas.</li>
+                    <li>Usamos la tangente: tan(54°) = 100 / distancia horizontal.</li>
+                    <li>Despejamos: distancia horizontal = 100 / tan(54°).</li>
+                    <li>Calculamos: distancia horizontal ≈ 100 / 1.3764 = <strong>72.65 m</strong>.</li>
+                </ol>
+            </details>
+        </div>
+    </section>
+
+    <footer>
+        <p>Material Didáctico - Guión de Repaso Activo | Elaborado para la clase de la docente Nancy Argueta</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
