@@ -131,6 +131,71 @@
       resize: vertical;
     }
 
+    .formula-box {
+      margin: 12px 0 16px;
+      padding: 16px;
+      border: 1px solid #bfdbfe;
+      border-left: 5px solid var(--primary);
+      border-radius: 8px;
+      background: #eff6ff;
+    }
+
+    .box.green .formula-box {
+      border-color: #99f6e4;
+      border-left-color: var(--secondary);
+      background: #f0fdfa;
+    }
+
+    .formula-label {
+      margin: 0 0 8px;
+      color: var(--primary-dark);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .box.green .formula-label {
+      color: var(--secondary);
+    }
+
+    .formula {
+      margin: 0;
+      color: #0f172a;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .fraction {
+      display: inline-flex;
+      flex-direction: column;
+      vertical-align: middle;
+      line-height: 1.25;
+      text-align: center;
+    }
+
+    .fraction span:first-child {
+      border-bottom: 1px solid currentColor;
+      padding: 0 5px 2px;
+    }
+
+    .fraction span:last-child {
+      padding: 2px 5px 0;
+    }
+
+    .formula-help {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 6px 16px;
+      margin: 12px 0 0;
+      color: #334155;
+      font-size: 0.9rem;
+    }
+
+    .formula-help p {
+      margin: 0;
+    }
+
     .steps-list {
       padding-left: 20px;
     }
@@ -193,7 +258,17 @@
         </tr>
       </table>
 
-      <p><strong>Paso 2:</strong> Aplica la fórmula del total acumulado para los 12 días: S<sub>n</sub> = a<sub>1</sub> × (r<sup>n</sup> − 1) ÷ (r − 1).</p>
+      <p><strong>Paso 2:</strong> Usa esta fórmula para sumar los pagos de los 12 días:</p>
+      <div class="formula-box">
+        <p class="formula-label">Suma de una sucesión geométrica</p>
+        <p class="formula">S<sub>n</sub> = a<sub>1</sub> × <span class="fraction"><span>r<sup>n</sup> − 1</span><span>r − 1</span></span></p>
+        <div class="formula-help">
+          <p><strong>S<sub>n</sub>:</strong> total acumulado.</p>
+          <p><strong>a<sub>1</sub>:</strong> pago del primer día.</p>
+          <p><strong>r:</strong> factor por el que se multiplica cada día.</p>
+          <p><strong>n:</strong> cantidad de días.</p>
+        </div>
+      </div>
 
       <textarea class="space-work" aria-label="Cálculos del problema 1" placeholder="Escribe aquí tus cálculos y resultados"></textarea>
 
@@ -215,8 +290,19 @@
             <li>Número total de filas (n): _____</li>
           </ul>
         </li>
-        <li><strong>Paso 2:</strong> Calcula el total de ladrillos usando la fórmula de la suma aritmética: S<sub>n</sub> = n × (a<sub>1</sub> + a<sub>n</sub>) ÷ 2.</li>
+        <li><strong>Paso 2:</strong> Calcula el total de ladrillos usando esta fórmula:</li>
       </ol>
+
+      <div class="formula-box">
+        <p class="formula-label">Suma de una sucesión aritmética</p>
+        <p class="formula">S<sub>n</sub> = <span class="fraction"><span>n × (a<sub>1</sub> + a<sub>n</sub>)</span><span>2</span></span></p>
+        <div class="formula-help">
+          <p><strong>S<sub>n</sub>:</strong> total de ladrillos.</p>
+          <p><strong>n:</strong> cantidad de filas.</p>
+          <p><strong>a<sub>1</sub>:</strong> ladrillos de la primera fila.</p>
+          <p><strong>a<sub>n</sub>:</strong> ladrillos de la última fila.</p>
+        </div>
+      </div>
 
       <textarea class="space-work" aria-label="Cálculos del problema 2" placeholder="Escribe aquí tus cálculos y resultados"></textarea>
 
