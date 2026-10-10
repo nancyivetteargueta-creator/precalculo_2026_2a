@@ -102,11 +102,33 @@
     }
 
     .space-work {
-      height: 150px;
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 150px;
       border: 2px dashed #cbd5e1;
       border-radius: 6px;
       margin-top: 15px;
+      padding: 12px;
       background: #fff;
+      color: var(--text);
+      font: inherit;
+      resize: vertical;
+    }
+
+    .answer-field {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      min-height: 80px;
+      margin-top: 8px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      resize: vertical;
     }
 
     .steps-list {
@@ -120,7 +142,7 @@
     @media print {
       body { background: white; padding: 0; }
       .container { box-shadow: none; max-width: 100%; }
-      .space-work { height: 180px; }
+      .space-work { min-height: 180px; }
     }
   </style>
 </head>
@@ -145,11 +167,11 @@
       <h2>Problema 1: La Oferta de Trabajo (Sucesión Geométrica)</h2>
       <p>El alumno realiza un trabajo de <strong>12 días</strong> para el director Juan Pablo. Se le ofrecen dos opciones de pago:</p>
       <ul>
-        <li><strong>Opcion A:</strong> 1 centavo el día 1, 2 centavos el día 2, 4 centavos el día 3, y así sucesivamente (duplicando cada día).</li>
+        <li><strong>Opción A:</strong> $1 el día 1, $2 el día 2, $4 el día 3, y así sucesivamente (duplicando cada día).</li>
         <li><strong>Opción B:</strong> Un pago único de $300.00 al finalizar el trabajo.</li>
       </ul>
 
-      <p><strong>Paso 1:</strong> Completa la tabla con los primeros días para observar la pauta de crecimiento en centavos.</p>
+      <p><strong>Paso 1:</strong> Completa la tabla con los primeros días para observar la pauta de crecimiento en dólares.</p>
       <table>
         <tr>
           <th>Día</th>
@@ -161,7 +183,7 @@
           <th>6</th>
         </tr>
         <tr>
-          <th>Pago (¢)</th>
+          <th>Pago ($)</th>
           <td>1</td>
           <td>2</td>
           <td>4</td>
@@ -173,10 +195,10 @@
 
       <p><strong>Paso 2:</strong> Aplica la fórmula del total acumulado para los 12 días: S<sub>n</sub> = a<sub>1</sub> × (r<sup>n</sup> − 1) ÷ (r − 1).</p>
 
-      <div class="space-work"></div>
+      <textarea class="space-work" aria-label="Cálculos del problema 1" placeholder="Escribe aquí tus cálculos y resultados"></textarea>
 
       <p><strong>Respuesta:</strong> ¿Cuál forma de pago le conviene al alumno y por qué?</p>
-      <div style="border-bottom: 1px solid #000; height: 30px;"></div>
+      <textarea class="answer-field" aria-label="Respuesta del problema 1" placeholder="Escribe tu respuesta aquí"></textarea>
     </div>
 
     <!-- EJERCICIO 2 -->
@@ -196,9 +218,10 @@
         <li><strong>Paso 2:</strong> Calcula el total de ladrillos usando la fórmula de la suma aritmética: S<sub>n</sub> = n × (a<sub>1</sub> + a<sub>n</sub>) ÷ 2.</li>
       </ol>
 
-      <div class="space-work"></div>
+      <textarea class="space-work" aria-label="Cálculos del problema 2" placeholder="Escribe aquí tus cálculos y resultados"></textarea>
 
       <p><strong>Respuesta:</strong> En total hay __________ ladrillos en la pila.</p>
+      <textarea class="answer-field" aria-label="Respuesta del problema 2" placeholder="Escribe el total de ladrillos"></textarea>
     </div>
 
   </div>
