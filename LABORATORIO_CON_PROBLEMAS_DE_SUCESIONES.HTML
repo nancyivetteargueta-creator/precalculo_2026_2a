@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio Práctico: Sucesiones Aritméticas y Geométricas</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #0d9488;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+
+    .meta-fields {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 15px;
+      margin-bottom: 25px;
+      background: #f1f5f9;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .field {
+      border-bottom: 1px dashed #94a3b8;
+      padding-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .box {
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--primary);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      background: #fafafa;
+    }
+
+    .box.green {
+      border-left-color: var(--secondary);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--primary-dark);
+      font-size: 1.25rem;
+    }
+
+    .box.green h2 {
+      color: var(--secondary);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f1f5f9;
+    }
+
+    .space-work {
+      height: 150px;
+      border: 2px dashed #cbd5e1;
+      border-radius: 6px;
+      margin-top: 15px;
+      background: #fff;
+    }
+
+    .steps-list {
+      padding-left: 20px;
+    }
+
+    .steps-list li {
+      margin-bottom: 8px;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .container { box-shadow: none; max-width: 100%; }
+      .space-work { height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Guía de Laboratorio Práctico</h1>
+    <div class="subtitle">Tema: Sucesiones Aritméticas y Geométricas en la Vida Real</div>
+
+    <div class="meta-fields">
+      <div class="field">Nombre del estudiante: </div>
+      <div class="field">Fecha: </div>
+    </div>
+
+    <div class="box">
+      <h2>🎯 Objetivo de la clase</h2>
+      <p>Aprenderás a identificar la diferencia entre patrones que crecen <strong>sumando</strong> (Aritméticos) y patrones que crecen <strong>multiplicando</strong> (Geométricos) para tomar mejores decisiones en problemas reales.</p>
+    </div>
+
+    <!-- EJERCICIO 1 -->
+    <div class="box">
+      <h2>Problema 1: La Oferta de Trabajo (Sucesión Geométrica)</h2>
+      <p>El alumno realiza un trabajo de <strong>12 días</strong> para el director Juan Pablo. Se le ofrecen dos opciones de pago:</p>
+      <ul>
+        <li><strong>Opcion A:</strong> 1 centavo el día 1, 2 centavos el día 2, 4 centavos el día 3, y así sucesivamente (duplicando cada día).</li>
+        <li><strong>Opción B:</strong> Un pago único de $300.00 al finalizar el trabajo.</li>
+      </ul>
+
+      <p><strong>Paso 1:</strong> Completa la tabla con los primeros días para observar la pauta de crecimiento en centavos.</p>
+      <table>
+        <tr>
+          <th>Día</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+          <th>6</th>
+        </tr>
+        <tr>
+          <th>Pago (¢)</th>
+          <td>1</td>
+          <td>2</td>
+          <td>4</td>
+          <td>8</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+
+      <p><strong>Paso 2:</strong> Aplica la fórmula del total acumulado para los 12 días: $S_n = a_1 \times \frac{r^n - 1}{r - 1}$</p>
+
+      <div class="space-work"></div>
+
+      <p><strong>Respuesta:</strong> ¿Cuál forma de pago le conviene al alumno y por qué?</p>
+      <div style="border-bottom: 1px solid #000; height: 30px;"></div>
+    </div>
+
+    <!-- EJERCICIO 2 -->
+    <div class="box green">
+      <h2>Problema 2: La Pila de Ladrillos (Sucesión Aritmética)</h2>
+      <p>Una construcción requiere apilar ladrillos de la siguiente manera: 128 ladrillos en la fila inferior (Fila 1), 123 en la segunda, 118 en la tercera, y así sucesivamente hasta llegar a la fila 26 que tiene solo 3 ladrillos.</p>
+
+      <ol class="steps-list">
+        <li><strong>Identifica los datos:</strong>
+          <ul>
+            <li>Primer término ($a_1$): _____</li>
+            <li>Último término ($a_{26}$): _____</li>
+            <li>Diferencia ($d$): _____ (¿Aumenta o disminuye?)</li>
+            <li>Número total de filas ($n$): _____</li>
+          </ul>
+        </li>
+        <li><strong>Paso 2:</strong> Calcula el total de ladrillos usando la fórmula de la suma aritmética: $S_n = \frac{n \times (a_1 + a_n)}{2}$</li>
+      </ol>
+
+      <div class="space-work"></div>
+
+      <p><strong>Respuesta:</strong> En total hay __________ ladrillos en la pila.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
